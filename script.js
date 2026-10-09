@@ -566,7 +566,7 @@ function filterCertificates(category, event) {
 }
 
 // =========================================================
-// LOGIKA MODAL PREVIEW SERTIFIKAT
+// LOGIKA MODAL PREVIEW SERTIFIKAT (VERSI DIPERBARUI)
 // =========================================================
 function openCertificateModal(certId) {
     const cert = certificatesData.find(c => c.id === certId);
@@ -578,39 +578,56 @@ function openCertificateModal(certId) {
     const certModalBox = document.getElementById('cert-modal-box');
     const modalImg = document.getElementById('cert-modal-img');
 
-    document.getElementById('cert-modal-title').textContent = cert.title;
-    document.getElementById('cert-modal-subtitle').textContent = cert.subtitle;
-    document.getElementById('cert-modal-year').textContent = cert.year;
-    document.getElementById('cert-modal-desc').textContent = cert.description;
-    document.getElementById('cert-modal-category').textContent = categoryFullNameMap[cert.type] || cert.type;
+    if (document.getElementById('cert-modal-title')) document.getElementById('cert-modal-title').textContent = cert.title;
+    if (document.getElementById('cert-modal-subtitle')) document.getElementById('cert-modal-subtitle').textContent = cert.subtitle;
+    if (document.getElementById('cert-modal-year')) document.getElementById('cert-modal-year').textContent = cert.year;
+    if (document.getElementById('cert-modal-desc')) document.getElementById('cert-modal-desc').textContent = cert.description;
+    if (document.getElementById('cert-modal-category')) document.getElementById('cert-modal-category').textContent = categoryFullNameMap[cert.type] || cert.type;
 
-    // Fallback gambar jika path lokal belum diisi/diakses
-    modalImg.src = cert.image;
-    modalImg.onerror = function() {
-        this.src = `https://placehold.co/800x600/0a0f26/38bdf8?text=${encodeURIComponent(cert.title)}`;
-    };
+    if (modalImg) {
+        modalImg.src = cert.image;
+        modalImg.onerror = function() {
+            this.src = `https://placehold.co/800x600/0a0f26/38bdf8?text=${encodeURIComponent(cert.title)}`;
+        };
+    }
 
-    // Render Tags
     const tagsContainer = document.getElementById('cert-modal-tags');
-    tagsContainer.innerHTML = cert.tags.map(tag => 
-        `<span class="px-2 py-0.5 rounded-md text-[10px] font-mono text-slate-300 bg-slate-900 border border-slate-800">${tag}</span>`
-    ).join('');
+    if (tagsContainer && cert.tags) {
+        tagsContainer.innerHTML = cert.tags.map(tag => 
+            `<span class="px-2 py-0.5 rounded-md text-[10px] font-mono text-slate-300 bg-slate-900 border border-slate-800">${tag}</span>`
+        ).join('');
+    }
 
-    // Buka Modal
-    certModal.classList.remove('opacity-0', 'pointer-events-none');
-    certModalBox.classList.remove('scale-95');
-    certModalBox.classList.add('scale-100');
+    if (certModal) {
+        certModal.classList.remove('opacity-0', 'pointer-events-none');
+        certModal.classList.add('opacity-100', 'pointer-events-auto');
+    }
+
+    if (certModalBox) {
+        certModalBox.classList.remove('scale-95');
+        certModalBox.classList.add('scale-100');
+    }
+
+    // Kunci scroll background saat modal terbuka
+    document.body.style.overflow = 'hidden';
 }
 
 function closeCertificateModal() {
     const certModal = document.getElementById('certificate-modal');
     const certModalBox = document.getElementById('cert-modal-box');
     
-    if (certModal && certModalBox) {
+    if (certModal) {
+        certModal.classList.remove('opacity-100', 'pointer-events-auto');
         certModal.classList.add('opacity-0', 'pointer-events-none');
+    }
+
+    if (certModalBox) {
         certModalBox.classList.remove('scale-100');
         certModalBox.classList.add('scale-95');
     }
+
+    // Kembalikan scroll background
+    document.body.style.overflow = 'auto';
 }
 
 // Integrasi Zoom Fullscreen Lightbox dari Modal Sertifikat
