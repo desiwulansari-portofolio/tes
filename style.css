@@ -1,99 +1,114 @@
+/* ==========================================================================
+   1. BASE TYPOGRAPHY & LAYOUT STYLES
+   ========================================================================== */
 body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #030612;
-            color: #f1f5f9;
-            overflow-x: hidden;
-        }
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #030612;
+    color: #f1f5f9;
+    overflow-x: hidden;
+}
 
-        /* Glassmorphism Styles */
-        .glass-panel {
-            background: rgba(10, 16, 38, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
+/* ==========================================================================
+   2. GLASSMORPHISM ENGINE
+   ========================================================================== */
+.glass-panel {
+    background: rgba(10, 16, 38, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
 
-        .glass-nav {
-            background: rgba(12, 18, 42, 0.85);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-        }
+.glass-nav {
+    background: rgba(12, 18, 42, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
 
-        .gradient-text-blue {
-            background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 50%, #1d4ed8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* ==========================================================================
+   3. GRADIENTS & ANIMATION UTILITIES
+   ========================================================================== */
+.gradient-text-blue {
+    background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 50%, #1d4ed8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        /* Lightning effect for Loader */
-        .lightning-bg {
-            background: radial-gradient(circle at center, rgba(37, 99, 235, 0.3) 0%, rgba(5, 7, 20, 0.95) 70%);
-        }
+.lightning-bg {
+    background: radial-gradient(circle at center, rgba(37, 99, 235, 0.3) 0%, rgba(5, 7, 20, 0.95) 70%);
+}
 
-        /* Custom Scrollbars */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: rgba(5, 7, 20, 0.5);
-            border-radius: 8px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e3a8a;
-            border-radius: 8px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2563eb;
-        }
+.image-hover-glow {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-        /* Equalizer Animation for Spotify Music Widget */
-        .eq-bar {
-            width: 3px;
-            background-color: #38bdf8;
-            animation: bounce 1s infinite ease-in-out alternate;
-        }
-        .eq-bar:nth-child(1) { animation-delay: 0.1s; height: 16px; }
-        .eq-bar:nth-child(2) { animation-delay: 0.3s; height: 24px; }
-        .eq-bar:nth-child(3) { animation-delay: 0.2s; height: 12px; }
-        .eq-bar:nth-child(4) { animation-delay: 0.4s; height: 20px; }
+.image-hover-glow:hover {
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.25);
+    border-color: rgba(56, 189, 248, 0.6);
+}
 
-        @keyframes bounce {
-            0% { transform: scaleY(0.3); }
-            100% { transform: scaleY(1.1); }
-        }
+.eq-bar {
+    width: 3px;
+    background-color: #38bdf8;
+    animation: bounce 1s infinite ease-in-out alternate;
+}
 
-        .paused .eq-bar {
-            animation-play-state: paused;
-            transform: scaleY(0.3);
-        }
+.eq-bar:nth-child(1) { animation-delay: 0.1s; height: 16px; }
+.eq-bar:nth-child(2) { animation-delay: 0.3s; height: 24px; }
+.eq-bar:nth-child(3) { animation-delay: 0.2s; height: 12px; }
+.eq-bar:nth-child(4) { animation-delay: 0.4s; height: 20px; }
 
-        /* Continuous Scroll Reveal Animations */
-        .reveal-item {
-            opacity: 0;
-            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
+@keyframes bounce {
+    0% { transform: scaleY(0.3); }
+    100% { transform: scaleY(1.1); }
+}
 
-        .reveal-up { transform: translateY(45px) scale(0.96); }
-        .reveal-left { transform: translateX(-50px); }
-        .reveal-right { transform: translateX(50px); }
-        .reveal-scale { transform: scale(0.82); }
+.paused .eq-bar {
+    animation-play-state: paused;
+    transform: scaleY(0.3);
+}
 
-        .reveal-visible {
-            opacity: 1 !important;
-            transform: translate(0, 0) scale(1) !important;
-        }
+/* ==========================================================================
+   4. SCROLL REVEAL INTERSECTION STYLES
+   ========================================================================== */
+.reveal-item {
+    opacity: 0;
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
 
-        /* Hover Glow Effect for Interactive Image Container */
-        .image-hover-glow {
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .image-hover-glow:hover {
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.25);
-            border-color: rgba(56, 189, 248, 0.6);
-        }
-          /* Custom Certificate Container & Card Styles */
+.reveal-up { transform: translateY(45px) scale(0.96); }
+.reveal-left { transform: translateX(-50px); }
+.reveal-right { transform: translateX(50px); }
+.reveal-scale { transform: scale(0.82); }
+
+.reveal-visible {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1) !important;
+}
+
+/* ==========================================================================
+   5. CUSTOM SCROLLBAR & MODAL OVERRIDES
+   ========================================================================== */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(5, 7, 20, 0.5);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e3a8a;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+}
+
 .cert-card {
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -102,20 +117,18 @@ body {
     transform: translateY(-4px);
 }
 
-/* Modal Image Fit without Cropping */
 #cert-modal-img {
     object-fit: contain !important;
 }
 
-/* Memastikan Lightbox selalu berada paling atas di atas modal sertifikat */
 #fullScreenLightbox {
     z-index: 100 !important;
 }
 
-/* Hide scrollbar for modal content */
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
 .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
