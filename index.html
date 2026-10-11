@@ -244,81 +244,87 @@
             </div>
         </section>
 
-        <!-- PORTFOLIO SECTION -->
-        <section id="portfolio" class="space-y-10 pt-8">
-            <div class="text-center space-y-2 reveal-item reveal-up">
-                <span class="px-3.5 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-sky-400 border border-blue-500/30 uppercase tracking-widest">
-                    <i class="fas fa-briefcase mr-1.5"></i>My Showcase
-                </span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Portfolio Showcase</h2>
-                <p class="text-slate-400 text-xs sm:text-sm">Exploration of administration systems, writing projects, IT experience, and skills.</p>
-                <div class="w-16 h-1 bg-gradient-to-r from-sky-400 to-blue-600 mx-auto rounded-full mt-2"></div>
-            </div>
-
-            <div class="flex justify-center reveal-item reveal-scale" data-delay="100">
-                <div class="glass-panel p-1.5 rounded-2xl flex flex-wrap justify-center gap-1 sm:gap-2 max-w-2xl border border-slate-800 shadow-xl">
-                    <button onclick="switchPortoTab('projects')" id="tab-projects" class="porto-tab active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold flex items-center space-x-2 transition-all bg-blue-600 text-white shadow-lg">
-                        <i class="fas fa-tasks"></i>
-                        <span>Projects</span>
-                    </button>
-                    <button onclick="switchPortoTab('certificates')" id="tab-certificates" class="porto-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold flex items-center space-x-2 transition-all text-slate-400 hover:text-white">
-                        <i class="fas fa-ribbon"></i>
-                        <span>Certificates</span>
-                    </button>
-                    <button onclick="switchPortoTab('creative')" id="tab-creative" class="porto-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold flex items-center space-x-2 transition-all text-slate-400 hover:text-white">
-                        <i class="fas fa-book-open"></i>
-                        <span>Creative Writing</span>
-                    </button>
-                    <button onclick="switchPortoTab('tech')" id="tab-tech" class="porto-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold flex items-center space-x-2 transition-all text-slate-400 hover:text-white">
-                        <i class="fas fa-layer-group"></i>
-                        <span>Skills & Tools</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- PROJECTS VIEW -->
+<!-- PROJECTS VIEW -->
             <div id="porto-projects-view" class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-                <div onclick="openItemDetailModal('Digital Archiving & Records System', 'Perancangan sistem inventaris berkas digital terstruktur untuk mempercepat pencarian data dan operasional perkantoran.', '2025', 'Google Workspace, Excel Automation, Digital Filing', 'https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&q=80&w=600')" class="glass-panel rounded-2xl overflow-hidden border border-slate-800 hover:border-blue-500/60 transition-all group cursor-pointer hover:-translate-y-1.5 shadow-xl reveal-item reveal-up" data-delay="100">
+                
+                <!-- Project 1: UKK TKJ -->
+                <div onclick="openItemDetailModal('UKK TKJ Network & Server Infrastructure', 'Designed a comprehensive network infrastructure including MikroTik Router setup (Routing, NAT, DHCP, Queue, Firewall) and Linux Debian Server deployment (DNS, Web, FTP, Mail), earning a perfect score of 100/100.', '2026', 'MikroTik, Debian Linux, DNS/Web/FTP/Mail, Firewall', 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=600')" class="glass-panel rounded-2xl overflow-hidden border border-slate-800 hover:border-blue-500/60 transition-all group cursor-pointer hover:-translate-y-1.5 shadow-xl reveal-item reveal-up" data-delay="100">
                     <div class="h-48 overflow-hidden bg-slate-900 relative">
-                        <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&q=80&w=600" alt="Digital Archiving" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0a0f26/ffffff?text=Digital+Archiving'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-blue-600/80 text-white backdrop-blur-md">Administration</span>
-                    </div>
-                    <div class="p-5 space-y-3">
-                        <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">Digital Records Management</h3>
-                        <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">Sistem pengelolaan arsip digital interaktif yang menyederhanakan klasifikasi dokumen kantor.</p>
-                        <div class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center space-x-1 pt-2">
-                            <span>Click to Preview Detail</span>
-                            <i class="fas fa-arrow-right text-[10px]"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div onclick="openItemDetailModal('Customer Service Workflow Optimization', 'Penyusunan standar komunikasi pelanggan (SOP) dan manajemen tiket keluhan berbasis transparansi respon.', '2024', 'CRM Basics, SOP Documentation, Service Excellence', 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=600')" class="glass-panel rounded-2xl overflow-hidden border border-slate-800 hover:border-blue-500/60 transition-all group cursor-pointer hover:-translate-y-1.5 shadow-xl reveal-item reveal-up" data-delay="200">
-                    <div class="h-48 overflow-hidden bg-slate-900 relative">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=600" alt="Customer Service Workflow" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0a0f26/ffffff?text=Customer+Service'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-600/80 text-white backdrop-blur-md">Operations</span>
-                    </div>
-                    <div class="p-5 space-y-3">
-                        <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">Customer Service & Service Design</h3>
-                        <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">Proyek perancangan alur pelayanan pelanggan dan dokumentasi pemetaan feedback.</p>
-                        <div class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center space-x-1 pt-2">
-                            <span>Click to Preview Detail</span>
-                            <i class="fas fa-arrow-right text-[10px]"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div onclick="openItemDetailModal('Network Infrastructure & Office Maintenance', 'Proyek instalasi dan pemeliharaan jaringan LAN, pengaturan IP addressing, serta penanganan konektivitas kantor.', '2023', 'Cisco Packet Tracer, Mikrotik Basics, Network Maintenance', 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=600')" class="glass-panel rounded-2xl overflow-hidden border border-slate-800 hover:border-blue-500/60 transition-all group cursor-pointer hover:-translate-y-1.5 shadow-xl reveal-item reveal-up" data-delay="300">
-                    <div class="h-48 overflow-hidden bg-slate-900 relative">
-                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=600" alt="Network Infrastructure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0a0f26/ffffff?text=Network+Project'">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=600" alt="UKK TKJ Network" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0a0f26/ffffff?text=UKK+TKJ'">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                         <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-purple-600/80 text-white backdrop-blur-md">IT & Network</span>
                     </div>
                     <div class="p-5 space-y-3">
-                        <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">Office Network Infrastructure</h3>
-                        <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">Pengaturan skema jaringan kabel dan nirkabel internal untuk mendukung kelancaran komunikasi.</p>
+                        <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">UKK TKJ Network Infrastructure</h3>
+                        <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">Designed network infrastructure, MikroTik router setup, and Linux Debian servers with a perfect score of 100/100.</p>
+                        <div class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center space-x-1 pt-2">
+                            <span>Click to Preview Detail</span>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: MikroTik Network Infrastructure -->
+                <div onclick="openItemDetailModal('MikroTik Network Infrastructure', 'Designed full-scale MikroTik network topology complete with DHCP, NAT, Firewall Filtering, and Queue bandwidth management. Ensured system stability and security through troubleshooting tests.', '2026', 'MikroTik RouterOS, NAT & DHCP, Queue Management, Firewall', 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=600')" class="glass-panel rounded-2xl overflow-hidden border border-slate-800 hover:border-blue-500/60 transition-all group cursor-pointer hover:-translate-y-1.5 shadow-xl reveal-item reveal-up" data-delay="200">
+                    <div class="h-48 overflow-hidden bg-slate-900 relative">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=600" alt="MikroTik Infrastructure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0a0f26/ffffff?text=MikroTik+Project'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-purple-600/80 text-white backdrop-blur-md">IT & Network</span>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">MikroTik Network Infrastructure</h3>
+                        <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">Full MikroTik topology design with DHCP, NAT, Firewall Filtering, and Queue bandwidth management.</p>
+                        <div class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center space-x-1 pt-2">
+                            <span>Click to Preview Detail</span>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Proxmox & Tailscale -->
+                <div onclick="openItemDetailModal('Public Proxmox Server with Tailscale', 'Built a virtualization server using Proxmox VE for VM and LXC management. Integrated Tailscale Mesh VPN for secure remote management access without port forwarding.', '2025 – 2026', 'Proxmox VE, LXC Containers, Tailscale Mesh VPN, Virtualization', 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&q=80&w=600')" class="glass-panel rounded-2xl overflow-hidden border border-slate-800 hover:border-blue-500/60 transition-all group cursor-pointer hover:-translate-y-1.5 shadow-xl reveal-item reveal-up" data-delay="300">
+                    <div class="h-48 overflow-hidden bg-slate-900 relative">
+                        <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&q=80&w=600" alt="Proxmox Server" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0a0f26/ffffff?text=Proxmox+Tailscale'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-blue-600/80 text-white backdrop-blur-md">Server & Virtualization</span>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">Public Proxmox Server & Tailscale</h3>
+                        <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">Proxmox VE virtualization server with Tailscale Mesh VPN for secure remote management access.</p>
+                        <div class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center space-x-1 pt-2">
+                            <span>Click to Preview Detail</span>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Linux & Web Server Deployment -->
+                <div onclick="openItemDetailModal('Linux & Web Server Deployment', 'Deployed and tested web servers (Nginx, Apache2, IIS) across Linux and Windows environments, complete with virtual host configurations.', '2025', 'Nginx, Apache2, IIS, Linux Debian, Windows Server', 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=600')" class="glass-panel rounded-2xl overflow-hidden border border-slate-800 hover:border-blue-500/60 transition-all group cursor-pointer hover:-translate-y-1.5 shadow-xl reveal-item reveal-up" data-delay="400">
+                    <div class="h-48 overflow-hidden bg-slate-900 relative">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=600" alt="Web Server Deployment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0a0f26/ffffff?text=Web+Server'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-600/80 text-white backdrop-blur-md">Web & Server</span>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">Linux & Web Server Deployment</h3>
+                        <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">Deployment and testing of Nginx, Apache2, and IIS web servers on Linux & Windows with virtual hosts.</p>
+                        <div class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center space-x-1 pt-2">
+                            <span>Click to Preview Detail</span>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Smart Trash Bin Prototype -->
+                <div onclick="openItemDetailModal('Smart Trash Bin Prototype (IoT)', 'Designed and assembled an automated smart trash bin prototype powered by microcontrollers and integrated sensors.', '2025', 'Microcontroller, Sensors, IoT Prototype, Hardware', 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600')" class="glass-panel rounded-2xl overflow-hidden border border-slate-800 hover:border-blue-500/60 transition-all group cursor-pointer hover:-translate-y-1.5 shadow-xl reveal-item reveal-up" data-delay="500">
+                    <div class="h-48 overflow-hidden bg-slate-900 relative">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600" alt="Smart Trash Bin IoT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0a0f26/ffffff?text=IoT+Project'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-amber-600/80 text-white backdrop-blur-md">IoT & Hardware</span>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">Smart Trash Bin Prototype</h3>
+                        <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">Designed and built an automated smart trash bin prototype using microcontrollers and sensors.</p>
                         <div class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center space-x-1 pt-2">
                             <span>Click to Preview Detail</span>
                             <i class="fas fa-arrow-right text-[10px]"></i>
@@ -326,7 +332,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- CERTIFICATES VIEW -->
             <div id="porto-certificates-view" class="hidden space-y-8 pt-4">
                 <div class="flex justify-center reveal-item reveal-scale">
